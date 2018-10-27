@@ -3,31 +3,37 @@ package com.springboot.base.models;
 import javax.persistence.*;
 
 @Entity
-@Table(name="user")
 public class User {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private Integer id;
+    private int userId;
 
-    private String name;
+    @Column(length = 500)
+    private String username;
 
+    @Column(length = 200)
     private String email;
 
-    public Integer getId() {
-        return id;
+    private int deviceId;
+
+    private int tagId;
+
+
+    public int getUserId() {
+        return userId;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getEmail() {
@@ -38,4 +44,19 @@ public class User {
         this.email = email;
     }
 
+    public int getDeviceId() {
+        return deviceId;
+    }
+
+    public void setDeviceId(int deviceId) {
+        this.deviceId = deviceId;
+    }
+
+    public int getTagId() {
+        return tagId;
+    }
+
+    public void setTagId(int tagId) {
+        this.tagId = tagId;
+    }
 }
